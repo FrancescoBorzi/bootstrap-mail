@@ -3,8 +3,14 @@
 function getAddresses()
 {
   $addresses = array(
-    "Borzì Francesco" => "borzifrancesco@gmail.com",
-    "Borzì Stefano"   => "stefanoborzi32@gmail.com"
+    array(
+      "name" => "Borzì Francesco",
+      "address" => "borzifrancesco@gmail.com"
+    ),
+    array(
+      "name" => "Borzì Stefano",
+      "address" => "stefanoborzi32@gmail.com"
+    )
   );
 
   echo json_encode($addresses);

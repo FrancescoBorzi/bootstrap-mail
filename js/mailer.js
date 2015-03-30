@@ -1,5 +1,6 @@
 $(function() {
-  $('#example-post').multiselect({
+
+  $('#addresses').multiselect({
     disableIfEmpty: true,
     maxHeight: 260,
     buttonWidth: '257px',
