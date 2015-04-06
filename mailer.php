@@ -2,6 +2,7 @@
 
 function getAddresses()
 {
+  // Address list
   $addresses = array(
     array(
       "name" => "Borzì Francesco",
@@ -16,6 +17,13 @@ function getAddresses()
   echo json_encode($addresses);
 }
 
+
+function sendEmail($addresses, $subject, $text)
+{
+  // TODO
+}
+
+
 if (isset($_GET['action']))
 {
   switch($_GET['action'])
@@ -24,7 +32,7 @@ if (isset($_GET['action']))
       getAddresses();
       break;
     case "sendEmails":
-      // TODO: send email to all $_GET['addresses']
+      sendEmail($_GET['addresses'], $_GET['subject'], $_GET['text']);
       break;
   }
 }

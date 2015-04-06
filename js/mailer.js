@@ -1,5 +1,7 @@
 $(function() {
 
+  /* Multiselect config */
+
   $('#addresses').multiselect({
     disableIfEmpty: true,
     maxHeight: 260,
@@ -8,6 +10,9 @@ $(function() {
     enableFiltering: true,
     enableCaseInsensitiveFiltering: true
   });
+
+
+  /* Get email addresses */
 
   $.ajax({
     url: 'mailer.php',
@@ -29,18 +34,28 @@ $(function() {
     }
   });
 
+
+  /* Send email */
+
   $('#mailer-form').on('submit', function(e) {
     e.preventDefault();
   });
 
   $('#send-button').click(function() {
+
     var selectedAddresses = $('#addresses').val();
-    console.log(selectedAddresses);
+    var subject = $('#form-subject').val();
+    var text = $('#form-text').val();
+
     $.ajax({
       url: 'mailer.php',
       type: 'GET',
-      data: { 'action' : 'sendEmails',
-              'addresses' : selectedAddresses },
+      data: {
+        'action'    : 'sendEmails',
+        'subject'   : subject,
+        'text'      : text,
+        'addresses' : selectedAddresses
+      },
       success: function(result) {
         console.log(result);
       },
@@ -48,6 +63,7 @@ $(function() {
         alert(errors);
       }
     });
+
   });
 
 });
