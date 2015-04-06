@@ -20,10 +20,11 @@ if (isset($_GET['action']))
 {
   switch($_GET['action'])
   {
-    case "addresses":
+    case "getAddresses":
       getAddresses();
       break;
-    case "mail":
+    case "sendEmails":
+      // TODO: send email to all $_GET['addresses']
       break;
   }
 }

@@ -42,11 +42,11 @@
 
     <div class="container">
       <div class="starter-template">
-        <h1>Bootstrap mailer</h1>
-        <p class="lead">Work in progress...</p>
+        <h1>Bootstrap mail</h1>
+        <p class="lead">A confortable web interface for sending email</p>
       </div>
 
-      <form class="form-horizontal" method="POST" action="post.php">
+      <form id="mailer-form" class="form-horizontal">
         <div class="form-group">
           <label class="col-sm-2 control-label">To</label>
           <div class="col-sm-10">
@@ -67,8 +67,8 @@
           </div>
         </div>
         <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Submit</button>
+          <div class="col-sm-offset-2 col-sm-4">
+            <button id="send-button" type="submit" class="btn btn-lg btn-block btn-default">Send</button>
           </div>
         </div>
       </form>

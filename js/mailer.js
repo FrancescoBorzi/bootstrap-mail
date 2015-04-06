@@ -12,7 +12,7 @@ $(function() {
   $.ajax({
     url: 'mailer.php',
     type: 'GET',
-    data: { 'action' : 'addresses' },
+    data: { 'action' : 'getAddresses' },
     dataType: 'json',
     success: function(result) {
       console.log(result);
@@ -27,6 +27,27 @@ $(function() {
     error: function(request, status, errors) {
       alert(errors);
     }
-  })
+  });
+
+  $('#mailer-form').on('submit', function(e) {
+    e.preventDefault();
+  });
+
+  $('#send-button').click(function() {
+    var selectedAddresses = $('#addresses').val();
+    console.log(selectedAddresses);
+    $.ajax({
+      url: 'mailer.php',
+      type: 'GET',
+      data: { 'action' : 'sendEmails',
+              'addresses' : selectedAddresses },
+      success: function(result) {
+        console.log(result);
+      },
+      error: function(request, status, errors) {
+        alert(errors);
+      }
+    });
+  });
 
 });
