@@ -41,6 +41,7 @@
     </nav>
 
     <div class="container">
+
       <div class="starter-template">
         <h1>Bootstrap mail</h1>
         <p class="lead">Given an address list, provides a confortable web interface for sending email</p>
@@ -71,7 +72,16 @@
             <button id="send-button" type="submit" class="btn btn-lg btn-block btn-default">Send</button>
           </div>
         </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <div class="alert alert-dismissible alert-danger" id="message-container" style="display: none;">
+              <button type="button" class="close" onClick="alertHide()">×</button>
+              <div id="message-text"></div>
+            </div>
+          </div>
+        </div>
       </form>
+
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
