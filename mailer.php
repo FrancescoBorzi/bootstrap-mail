@@ -1,5 +1,8 @@
 <?php
 
+$From     = "borzifrancesco2@gmail.com";
+$FromName = "Sender Name";
+
 function getAddresses()
 {
   // Address list
@@ -30,8 +33,8 @@ function sendEmail($addresses, $subject, $text)
   $mail->isHTML(true);
   $mail->isSMTP();
 
-  $mail->From     = "borzifrancesco2@gmail.com";
-  $mail->FromName = "Sender Name";
+  $mail->From     = $From;
+  $mail->FromName = $FromName;
   $mail->Subject  = utf8_decode($subject);
   $mail->Body     = $text;
 

@@ -80,8 +80,8 @@ $(function() {
   $('#send-button').click(function() {
 
     var selectedAddresses = $('#addresses').val();
-    var subject = $('#form-subject').val();
-    var text = $('#form-text').val();
+    var subject           = $('#form-subject').val();
+    var text              = $('#form-text').val();
 
     $.ajax({
       url: 'mailer.php',
